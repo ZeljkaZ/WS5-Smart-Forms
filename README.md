@@ -102,3 +102,17 @@ The project covers the following workshop topics:
 4. The form will open in your browser (e.g., `http://127.0.0.1:5500/index.html`).
 5. Test the features: typing, phone normalisation, toggling company fields, autosave, clearing, and submission.
 
+
+### Relevant Screenshots
+
+**1. Form with error messages**  
+![Form Errors](screenshots/screenshot1.jpeg)
+
+**2. Console output showing saved/restored drafts**  
+![Autosave Logs](screenshots/screenshot2.jpeg)
+
+**3. Successfully filled and submitted form**  
+![Form Submitted](screenshots/screenshot3.jpeg)
+
+**4. Console showing submitted draft/object**  
+![Submission Object](screenshots/screenshot4.jpeg) 

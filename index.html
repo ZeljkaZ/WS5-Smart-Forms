@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- HTML5 declaration -->
+<html lang="en">
+  <!-- Sets the language for accessibility to english -->
+  <head>
+    <meta charset="utf-8" />
+    <!-- All characters are support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Responsive design enabled on all devices -->
+    <title>Smart Forms Demonstration</title>
+    <!-- Page title shown in browser/tab -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Links to external stylesheet -->
+  </head>
+  <body>
+    <main class="container">
+      <!-- Main content of the page - everything that it's visible -->
+      <h1>Sign up</h1>
+      <!-- Form title -->
+      <div
+        id="error-summary"
+        class="visually-hidden"
+        role="alert"
+        aria-live="polite"
+      ></div>
+      <!-- Hidden error summary, accessible to screen readers -->
+
+      <form id="signupForm" novalidate>
+        <!-- Form element with custom validation -->
+        <fieldset>
+          <legend>Your details</legend>
+          <!-- Groups related fields under one legend -->
+
+          <label for="name">Full name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            minlength="2"
+            autocomplete="name"
+            aria-describedby="nameHelp"
+          />
+          <!-- Input for full name with validation & accessibility -->
+          <small id="nameHelp" class="help"
+            >Enter your first and last name.</small
+          >
+          <!-- Help text associated with the name field -->
+          <p class="error" id="nameError"></p>
+          <!-- Placeholder for name error messages -->
+
+          <label for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            autocomplete="email"
+          />
+          <!-- Input for email with HTML5 validation -->
+          <p class="error" id="emailError"></p>
+          <!-- Placeholder for email error messages -->
+
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            required
+            minlength="8"
+            pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}"
+            aria-describedby="pwdHelp"
+          />
+          <!-- Password field with pattern and minimum length validation -->
+          <small id="pwdHelp" class="help"
+            >At least 8 characters with upper, lower, and a number.</small
+          >
+          <!-- Tips for password complexity -->
+          <p class="error" id="passwordError"></p>
+          <!-- Placeholder for password error messages -->
+
+          <label for="phone">Phone (optional)</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            pattern="\+?[0-9\s-]{7,15}"
+            placeholder="+358 40 123 4567"
+          />
+          <!-- Optional phone field with pattern for basic format -->
+          <p class="error" id="phoneError"></p>
+          <!-- Placeholder for phone error messages -->
+
+          <label>
+            <input id="companyToggle" type="checkbox" /> Register as a company
+          </label>
+          <!-- Checkbox to show/hide company fields -->
+          <div id="companyFields" hidden>
+            <label for="company">Company name</label>
+            <input id="company" name="company" type="text" minlength="2" />
+            <!-- Company input field, appears only if checkbox checked -->
+            <p class="error" id="companyError"></p>
+          </div>
+          <!-- Container for company input, hidden by default -->
+        </fieldset>
+
+        <input
+          type="text"
+          id="hp"
+          name="hp"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+          style="position: absolute; left: -9999px"
+        />
+        <!-- Hidden field to catch bots: humans won't type here, but bots might -->
+
+        <button type="submit" class="btn">Create account</button>
+        <!-- Submit button -->
+        <button type="button" id="clearBtn" class="btn-secondary">Clear</button>
+        <!-- Clears all form fields -->
+      </form>
+    </main>
+    <script src="app.js"></script>
+    <!-- Links JavaScript file  -->
+  </body>
+</html>
